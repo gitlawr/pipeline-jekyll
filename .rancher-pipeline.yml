@@ -3,7 +3,7 @@ stages:
   steps:
   - runScriptConfig:
       image: busybox
-      shellScript: whoami && ls -al
+      shellScript: whoami && ls -al && chown -R 1000:1000 .
 - name: Build
   steps:
   - runScriptConfig:
