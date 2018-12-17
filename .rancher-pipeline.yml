@@ -4,6 +4,9 @@ stages:
   - runScriptConfig:
       image: jekyll/builder:3.8
       shellScript: jekyll build
+  - runScriptConfig:
+      image: busybox
+      shellScript: whoami
 - name: Publish
   steps:
   - publishImageConfig:
@@ -14,3 +17,4 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+notification: {}
