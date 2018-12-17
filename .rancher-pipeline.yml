@@ -1,4 +1,9 @@
 stages:
+- name: Precheck
+  steps:
+  - runScriptConfig:
+      image: busybox
+      shellScript: whoami && ls -al
 - name: Build
   steps:
   - runScriptConfig:
